@@ -41,12 +41,10 @@ function loadMoreImages() {
   const name = searchInput.value;
   imageApi.searchName(name, paginator).then(data => {
     addImages(data.hits);
-    scrollTo = (length, extraLength) => {
-      window.scrollTo({
-        top: length + extraLength,
-        behavior: 'smooth',
-      });
-    };
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth',
+    });
   });
 }
 
